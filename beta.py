@@ -19,6 +19,12 @@ pylock_Wrong_info = 'Sorry its wrong. Try again'
 User = "user"
 UserPassword = "user"
 
+def debug():
+    secret = input("Are you sure to enable debug mode? [Y/n]")
+    if secret == "y":
+        sys.stdout = open('debug.py', 'wt')
+        print("")
+
 
 def python_help_me():
     print("Thanks for downloading python for kids.")
@@ -293,4 +299,5 @@ while yes:
     else:
         print(Wrong_info)
         
+
 
