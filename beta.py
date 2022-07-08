@@ -1,9 +1,16 @@
-import tkinter
-from tkinter.constants import *
+def importlib():
+    import tkinter
+    from tkinter.constants import *
+    from time import sleep
+    import webbrowser
+    import sys
+    
+try:
+    importlib()
 
-from time import sleep
-
-import webbrowser
+except ImportError:
+    print("Uh-Oh... Seems like some of the librarys arent installed :( Please debug.")
+    errorcode = "lib"
 
 version = 2.5
 
@@ -23,7 +30,11 @@ def debug():
     secret = input("Are you sure to enable debug mode? [Y/n]")
     if secret == "y":
         sys.stdout = open('debug.py', 'wt')
-        print("")
+        print(" ____    _____   ____    _   _    ____     __  __    ___    ____    _____ ")
+        print("|  _ \  | ____| | __ )  | | | |  / ___|   |  \/  |  / _ \  |  _ \  | ____|")
+        print("| | | | |  _|   |  _ \  | | | | | |  _    | |\/| | | | | | | | | | |  _|  ")
+        print("| |_| | | |___  | |_) | | |_| | | |_| |   | |  | | | |_| | | |_| | | |___ ")
+        print("|____/  |_____| |____/   \___/   \____|   |_|  |_|  \___/  |____/  |_____|")
 
 
 def python_help_me():
