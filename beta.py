@@ -233,6 +233,9 @@ def pylock():
 
                      elif command_line == "python news":
                            python_news()
+                     
+                     elif command_line == "python debug":
+                        debug()
 
     else:
         print(pylock_Wrong_info)
