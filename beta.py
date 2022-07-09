@@ -1,9 +1,10 @@
 def importlib():
     import tkinter
     from tkinter.constants import *
-    from time import sleep
-    import webbrowser
-    import sys
+
+from time import sleep
+import webbrowser
+import sys
     
 try:
     importlib()
@@ -70,14 +71,18 @@ def python_help_me():
                     input("Sorry but no more commands are anavible. Go to \(the path to the python for kids folder)\More Command")
             
 def python_make_a_window():
-    tk = tkinter.Tk()
-    frame = tkinter.Frame(tk, relief=RIDGE, borderwidth=2)
-    frame.pack(fill=BOTH,expand=1)
-    label = tkinter.Label(frame, text="i'ma your new Windows 10 setup window")
-    label.pack(fill=X, expand=1)
-    button = tkinter.Button(frame,text=">>>Install<<<",command=tk.destroy)
-    button.pack(side=BOTTOM)
-    tk.mainloop()
+    if errorcode == "lib":
+        print("You can't run this command. You need to debug.")
+        
+    else:
+        tk = tkinter.Tk()
+        frame = tkinter.Frame(tk, relief=RIDGE, borderwidth=2)
+        frame.pack(fill=BOTH,expand=1)
+        label = tkinter.Label(frame, text="i'ma your new Windows 10 setup window")
+        label.pack(fill=X, expand=1)
+        button = tkinter.Button(frame,text=">>>Install<<<",command=tk.destroy)
+        button.pack(side=BOTTOM)
+        tk.mainloop()
 
 
 def python_exit():
@@ -92,6 +97,7 @@ def python_say_something():
     print(say)
 
 def python_make_a_clear_window():
+    
     tk = tkinter.Tk()
 
 def python_news():
