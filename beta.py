@@ -332,9 +332,8 @@ while yes:
                 elif command_line == "python news":
                     python_news()
 
-                elif command_line == "buglit":
-                      bug()
-                      break
+                elif command_line == "debug mode":
+                      debug()
 
                 else:
                     print("invaild command: ", command_line)
