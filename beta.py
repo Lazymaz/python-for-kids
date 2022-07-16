@@ -32,6 +32,7 @@ def debug():
         sys.stdout = open('debug.py', 'wt')
         print("import platform")
         print("import sys")
+        print("platform = sys.platform")
         print("print(' ____    _____   ____    _   _    ____     __  __    ___    ____    _____ ')")
         print("print('|  _ \  | ____| | __ )  | | | |  / ___|   |  \/  |  / _ \  |  _ \  | ____|')")
         print("print('| | | | |  _|   |  _ \  | | | | | |  _    | |\/| | | | | | | | | | |  _|  ')")
