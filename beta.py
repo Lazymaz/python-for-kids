@@ -30,6 +30,8 @@ def debug():
     secret = input("Are you sure to enable debug mode? [Y/n]")
     if secret == "y":
         sys.stdout = open('debug.py', 'wt')
+        print("import platform")
+        print("import sys")
         print("print(' ____    _____   ____    _   _    ____     __  __    ___    ____    _____ ')")
         print("print('|  _ \  | ____| | __ )  | | | |  / ___|   |  \/  |  / _ \  |  _ \  | ____|')")
         print("print('| | | | |  _|   |  _ \  | | | | | |  _    | |\/| | | | | | | | | | |  _|  ')")
