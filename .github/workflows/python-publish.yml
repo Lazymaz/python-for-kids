@@ -337,6 +337,7 @@ while yes:
 
                 elif command_line == "debug mode":
                       debug()
+                      break
 
                 else:
                     print("invaild command: ", command_line)
