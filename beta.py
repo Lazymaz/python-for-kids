@@ -7,6 +7,7 @@ import sys
 try:
     import tkinter
     from tkinter.constants import *
+    import easygui
 
 except ImportError:
     print("Uh-Oh... Seems like some of the librarys arent installed :( Please debug.")
@@ -27,11 +28,18 @@ User = "user"
 UserPassword = "user"
 
 def debug():
-    secret = input("Are you sure to enable debug mode? [Y/n]")
-    if secret == "y":
-        sys.stdout = open('debug.py', 'wt')
+    secret = input("Are you sure to enable debug mode? [Y/n]: ")
+    if secret == "y" or secret == "Y":
+        try:
+            save_state = easygui.filesavebox(title="Please select where to save")
+            sys.stdout = open(save_state + ".py", 'wt')
+
+        except:
+            save_state = input("Where to save: ")
+            sys.stdout = open(save_state, 'wt')
         print("import platform")
         print("import sys")
+        print("import os")
         print("platform = sys.platform")
         print("print(' ____    _____   ____    _   _    ____     __  __    ___    ____    _____ ')")
         print("print('|  _ \  | ____| | __ )  | | | |  / ___|   |  \/  |  / _ \  |  _ \  | ____|')")
@@ -44,56 +52,40 @@ def debug():
         print("            try:")
         print("                    import tkinter")
         print("                    from tkinter import *")
+        print("                    import easygui")
+        print("                    import platform")
+        print("                    import sys, os")
         print("                    print('No Problems at all.')")
+        print("                    ")
         print("            except ImportError:")
         print("                    input('Oh No... The Check found some Problems')")
-        print("                    choice = input('Should I write a reapirer file? [Y/n]: ')")
+        print("                    choice = input('Should I fix this issue? [Y/n]: ')")
         print("                    if choice == 'y':")
-        print("                            while True:")
-        print("                                if platform == 'linux' or platform == 'linux2':")
-        print("                                        sys.stdout = open('repair.sh', 'wt')")
-        print("                                        print('#!/usr/bin/bash/')")
-        print("                                        print('sudo apt install -y python3-pip')")
-        print("                                        print('pip3 install tkinter')")
-        print("                                        print('read -p Done.')")
-        print("                                        break")
-        print("                                elif platform == 'darwin':")
-        print("                                        sys.stdout = open('reapir.sh', 'wt')")
-        print("                                        print('pip3 install tkinter')")
-        print("                                        print('echo Done.')")
-        print("                                        break")
-        print("                                elif platform == 'win32':")
-        print("                                    sys.stdout = open('installer.bat', 'wt'")
-        print("                                    pip3 install tkinter")
-        print("                                    pause")
-        print("                                    break")
-        print("                                else:")
-        print("                                    pass")
+        print("                            if platform == 'linux' or platform == 'linux2' or platform == 'linux3':")
+        print("                                os.system('sudo apt install -y python3-pip && pip3 install tkinter easygui pyfiglet && read -p Done.')")
+        print("                            elif platform == 'darwin':")
+        print("                                os.system('pip3 install tkinter pyfiglet easygui && echo Done.')")
+        print("                            elif platform == 'win32':")
+        print("                                os.system('pip3 install easygui pyfiglet && pause')")
+        print("                            else:")
+        print("                                pass")
         print("                    if choice == 'Y':")
-        print("                            while True:")
-        print("                                if platform == 'linux' or platform == 'linux2':")
-        print("                                        sys.stdout = open('repair.sh', 'wt')")
-        print("                                        print('#!/usr/bin/bash/')")
-        print("                                        print('sudo apt install -y python3-pip')")
-        print("                                        print('pip3 install tkinter')")
-        print("                                        print('read -p Done.')")
-        print("                                        break")
-        print("                                elif platform == 'darwin':")
-        print("                                        sys.stdout = open('reapir.sh', 'wt')")
-        print("                                        print('pip3 install tkinter')")
-        print("                                        print('echo Done.')")
-        print("                                        break")
-        print("                                elif platform == 'win32':")
-        print("                                    sys.stdout = open('installer.bat', 'wt'")
-        print("                                    pip3 install tkinter")
-        print("                                    pause")
-        print("                                    break")
-        print("                                else:")
-        print("                                    pass")
+        print("                            if platform == 'linux' or platform == 'linux2' or platform == 'linux3':")
+        print("                                os.system('sudo apt install -y python3-pip && pip3 install tkinter easygui pyfiglet && read -p Done.')")
+        print("                            elif platform == 'darwin':")
+        print("                                os.system('pip3 install easygui pyfiglet && echo Done.')")
+        print("                            elif platform == 'win32':")
+        print("                                os.system('pip3 install easygui pyfiglet && pause')")
+        print("                            else:")
+        print("                                pass")
         print("                    if choice == 'n':")
         print("                            print('Abort')")
         print("                    if choice == 'N':")
         print("                            print('Abort.')")
+        exit()
+
+    elif secret == "n" or secret == "N":
+        print("Abort.")
 
 def python_help_me():
     print("Thanks for downloading python for kids.")
@@ -174,7 +166,7 @@ def pylock():
 
         if logon_info_as_username == "user":
             if logon_info_as_password == "user":
-                input("Welcome to python for kids 2.6!")
+                input("Welcome to python for kids 1.0 BETA!")
 
                 while True:
                     command_line = input("command line: ")
@@ -224,9 +216,6 @@ def pylock():
 
                      elif command_line == "python go to link":
                            python_go_to_link()
-
-                     elif command_line == "python download":
-                           python_download()
 
                      elif command_line == "python exit":
                            exit()
@@ -323,9 +312,6 @@ while yes:
                 elif command_line == "python go to link":
                     python_go_to_link()
 
-                elif command_line == "python download":
-                    python_download()
-
                 elif command_line == "python exit":
                     exit()
 
@@ -359,9 +345,6 @@ while yes:
 
                  elif command_line == "python go to link":
                        python_go_to_link()
-
-                 elif command_line == "python download":
-                       python_download()
 
                  elif command_line == "python exit":
                        exit()
