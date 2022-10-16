@@ -13,7 +13,7 @@ except ImportError:
     print("Uh-Oh... Seems like some of the librarys arent installed :( Please debug.")
     errorcode = "lib"
 
-version = 2.5
+version = 1.0
 
 yes = True
 no = False
